@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 function TodoForm({ addTodo }) {
   let [title, setTitle] = useState('');
 
+  const { v4: uuidv4 } = require('uuid');
+  const guid = uuidv4();
+
   let handleSubmit = (e) => {
     e.preventDefault();
     // Add data
     let todo = {
-      id: Math.random(),
+      id: guid,
       title,
       completed: false,
     };

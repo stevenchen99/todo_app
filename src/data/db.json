@@ -1,18 +1,13 @@
 {
   "todos": [
     {
-      "id": 1,
+      "id": "3b0afde8-d689-4068-92ab-52747ed35904",
       "title": "My First Todo",
       "completed": false
     },
     {
-      "id": 2,
+      "id": "6fd1a5ce-c0bf-40d4-a919-0b29c3e2c016",
       "title": "My Second Todo",
-      "completed": false
-    },
-    {
-      "id": 0.36309965565603397,
-      "title": "Go to Work",
       "completed": false
     }
   ]
