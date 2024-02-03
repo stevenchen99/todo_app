@@ -23,10 +23,10 @@ export default function Todo({ todo, deleteTodo, updateTodo }) {
         <input type='checkbox' />
         {!isEdit && (
           <span
-            onDoubleClick={() => setIsEdit(true)}
             className={`todo-item-label ${
               todo.completed ? 'line-through' : ''
             }`}
+            onDoubleClick={() => setIsEdit(true)}
           >
             {todo.title}
           </span>
@@ -34,10 +34,10 @@ export default function Todo({ todo, deleteTodo, updateTodo }) {
         <form onSubmit={updateTodoHandler}>
           {isEdit && (
             <input
-              onChange={(e) => setTitle(e.target.value)}
               type='text'
               className='todo-item-input'
               value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           )}
         </form>

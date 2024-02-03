@@ -3,17 +3,17 @@
     {
       "id": "3b0afde8-d689-4068-92ab-52747ed35904",
       "title": "My First Todo",
-      "completed": false
+      "completed": true
     },
     {
       "id": "6fd1a5ce-c0bf-40d4-a919-0b29c3e2c016",
       "title": "My Second Todo",
-      "completed": false
+      "completed": true
     },
     {
       "id": "63f0a13f-c018-4666-8d58-a3be8be08b1d",
       "title": "My Third Todo",
-      "completed": false
+      "completed": true
     }
   ]
 }

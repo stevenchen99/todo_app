@@ -69,9 +69,16 @@ function App() {
 
   /*** Check All Todos ***/
   let checkAll = () => {
+    // Server Side
     todos.forEach((t) => {
       t.completed = true;
       updateTodo(t);
+    });
+    // Client Side
+    setTodos((prevState) => {
+      return prevState.map((t) => {
+        return { ...t, completed: true };
+      });
     });
   };
 

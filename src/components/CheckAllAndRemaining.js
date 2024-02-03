@@ -4,7 +4,7 @@ function CheckAllAndRemaining({ remainingCount, checkAll }) {
   return (
     <div className='check-all-container'>
       <div>
-        <div onClick={checkAll} className='button'>
+        <div className='button' onClick={checkAll}>
           Check All
         </div>
       </div>

@@ -27,8 +27,8 @@ function TodoForm({ addTodo }) {
         type='text'
         className='todo-input'
         placeholder='What do you need to do?'
-        onChange={(e) => setTitle(e.target.value)}
         value={title}
+        onChange={(e) => setTitle(e.target.value)}
       />
     </form>
   );
