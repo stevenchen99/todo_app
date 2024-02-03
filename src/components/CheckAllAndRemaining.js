@@ -1,13 +1,17 @@
-import React from "react";
+import React from 'react';
 
-function CheckAllAndRemaining() {
+function CheckAllAndRemaining({ remainingCount, checkAll }) {
   return (
-    <div className="check-all-container">
+    <div className='check-all-container'>
       <div>
-        <div className="button">Check All</div>
+        <div onClick={checkAll} className='button'>
+          Check All
+        </div>
       </div>
 
-      <span>3 items remaining</span>
+      <span>
+        {remainingCount} item{remainingCount > 1 ? 's' : ''} remaining
+      </span>
     </div>
   );
 }

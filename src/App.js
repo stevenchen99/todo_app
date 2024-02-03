@@ -64,6 +64,17 @@ function App() {
     });
   };
 
+  /*** Get remaining Todos count ***/
+  let remainingCount = todos.filter((t) => !t.completed).length;
+
+  /*** Check All Todos ***/
+  let checkAll = () => {
+    todos.forEach((t) => {
+      t.completed = true;
+      updateTodo(t);
+    });
+  };
+
   return (
     <div className='todo-app-container'>
       <div className='todo-app'>
@@ -74,7 +85,10 @@ function App() {
           deleteTodo={deleteTodo}
           updateTodo={updateTodo}
         />
-        <CheckAllAndRemaining />
+        <CheckAllAndRemaining
+          remainingCount={remainingCount}
+          checkAll={checkAll}
+        />
         <div className='other-buttons-container'>
           <TodoFilters />
           <ClearCompletedBtn />
