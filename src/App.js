@@ -16,9 +16,9 @@ function App() {
       .then((todos) => setTodos(todos));
   }, []);
 
+  /*** Create Todo ***/
   let addTodo = (todo) => {
-    console.log(todo);
-    // Update data to server side
+    // Create data to server side
     fetch('http://localhost:3001/todos', {
       method: 'POST',
       headers: {
@@ -31,19 +31,35 @@ function App() {
     setTodos((prevState) => [...prevState, todo]);
   };
 
+  /*** Delete Todo ***/
   let deleteTodo = (todoId) => {
-    console.log(todoId);
     // Delete data in server side
     fetch(`http://localhost:3001/todos/${todoId}`, {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     });
     // Delete data in client side
     setTodos((prevState) => {
       return prevState.filter((todo) => {
-        return todo.id != todoId;
+        return todo.id !== todoId;
+      });
+    });
+  };
+
+  /*** Update Todo ***/
+  let updateTodo = (todo) => {
+    // Update data in server side
+    fetch(`http://localhost:3001/todos/${todo.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(todo),
+    });
+    // Update data in client side
+    setTodos((prevState) => {
+      return prevState.map((t) => {
+        if (t.id == todo.id) return todo;
+        return t;
       });
     });
   };
@@ -53,7 +69,11 @@ function App() {
       <div className='todo-app'>
         <h2>Todo App</h2>
         <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} deleteTodo={deleteTodo} />
+        <TodoList
+          todos={todos}
+          deleteTodo={deleteTodo}
+          updateTodo={updateTodo}
+        />
         <CheckAllAndRemaining />
         <div className='other-buttons-container'>
           <TodoFilters />
