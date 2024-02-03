@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 
-function ClearCompletedBtn() {
+function ClearCompletedBtn({ clearCompleted }) {
   return (
     <div>
-      <button className="button">Clear completed</button>
+      <button className='button' onClick={clearCompleted}>
+        Clear completed
+      </button>
     </div>
   );
 }
